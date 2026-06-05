@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frente Externo — Variación Semanal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+  :root{
+    --bg:#f5f3ee;
+    --surface:#ffffff;
+    --ink:#111110;
+    --ink-soft:#4a4844;
+    --ink-faint:#8a877d;
+    --line:#dedad2;
+    --green:#0e7c3a;
+    --green-bar:#1a9c4e;
+    --red:#b5291d;
+    --red-bar:#d93b2b;
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'DM Sans',-apple-system,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:14px;
+    line-height:1.6;
+    padding:44px 20px 80px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+  .masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:14px;margin-bottom:6px;
+    display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:8px;
+  }
+  .kicker{
+    font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ink-faint);font-weight:600;
+  }
+  .masthead h1{
+    font-family:var(--serif);font-size:28px;font-weight:400;
+    letter-spacing:-.01em;margin-top:4px;line-height:1.1;color:var(--ink);
+  }
+  .masthead-source{
+    font-size:11px;color:var(--ink-faint);font-weight:500;letter-spacing:.03em;
+    white-space:nowrap;padding-bottom:4px;
+  }
+  .panel{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-top:3px solid var(--ink);
+    padding:26px 28px 32px;
+    margin-top:24px;
+  }
+  .panel-head{
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;margin-bottom:20px;
+    display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+  .panel-head h2{
+    font-family:var(--serif);font-size:19px;font-weight:400;letter-spacing:-.01em;color:var(--ink);
+  }
+  .panel-head .sub{
+    font-size:11.5px;color:var(--ink-faint);font-weight:500;white-space:nowrap;
+  }
+  .kpis{
+    display:grid;gap:0;margin-bottom:26px;
+    grid-template-columns:repeat(auto-fit,minmax(105px,1fr));
+    border:1px solid var(--line);
+  }
+  .kpi{padding:10px 14px;border-left:1px solid var(--line);background:var(--bg);}
+  .kpi:first-child{border-left:none;}
+  .kpi .label{font-size:10.5px;color:var(--ink-faint);letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:4px;}
+  .kpi .val{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.1;}
+  .pos{color:var(--green);}
+  .neg{color:var(--red);}
+  .neu{color:var(--ink);}
+  .legend{
+    display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px;
+    font-size:11.5px;color:var(--ink-soft);font-weight:500;
+  }
+  .legend span{display:flex;align-items:center;gap:5px;}
+  .swatch{width:10px;height:10px;border-radius:1px;display:inline-block;}
+  .chart-box{position:relative;width:100%;}
+  .divider{border:none;border-top:1px solid var(--line);margin:24px 0 0;}
+  .block-label{
+    font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-faint);margin:20px 0 10px;
+  }
+  .footnote{
+    font-size:11px;color:var(--ink-faint);margin-top:18px;
+    border-top:1px solid var(--line);padding-top:12px;line-height:1.5;font-weight:400;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <div class="kicker">Resumen de mercado · Frente externo</div>
+      <h1>Wall Street, petróleos y sectores</h1>
+    </div>
+    <div class="masthead-source">Fuentes externas</div>
+  </header>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>Frente externo</h2>
+      <div class="sub">Wall Street, petróleos y S&amp;P · variación semanal</div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="label">Dow Jones</div><div class="val pos">+0,2%</div></div>
+      <div class="kpi"><div class="label">S&amp;P 500</div><div class="val neg">−2,64%</div></div>
+      <div class="kpi"><div class="label">Nasdaq</div><div class="val neg">−4,18%</div></div>
+      <div class="kpi"><div class="label">WTI</div><div class="val pos">US$90,54</div></div>
+      <div class="kpi"><div class="label">Brent</div><div class="val pos">US$92,9</div></div>
+      <div class="kpi"><div class="label">Treasury 10A</div><div class="val neu">4,48%</div></div>
+    </div>
+
+    <div class="legend">
+      <span><i class="swatch" style="background:var(--green-bar)"></i>Suba</span>
+      <span><i class="swatch" style="background:var(--red-bar)"></i>Baja</span>
+    </div>
+
+    <div class="block-label">Índices de Wall Street</div>
+    <div class="chart-box" style="height:155px;">
+      <canvas id="idxChart"></canvas>
+    </div>
+
+    <hr class="divider">
+    <div class="block-label">Petróleos · variación y cierre semanal</div>
+    <div class="chart-box" style="height:125px;">
+      <canvas id="oilChart"></canvas>
+    </div>
+
+    <hr class="divider">
+    <div class="block-label">Sectores del S&amp;P · variación semanal</div>
+    <div class="chart-box" style="height:390px;">
+      <canvas id="secChart"></canvas>
+    </div>
+
+    <p class="footnote">
+      Treasury a 10 años, WTI y Brent: datos de cierre de mercado de la semana.
+      Sectores: clasificación GICS del S&amp;P 500.
+    </p>
+  </section>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  const GREEN='#1a9c4e', RED='#d93b2b';
+  const sans="'DM Sans',-apple-system,Helvetica,Arial,sans-serif";
+
+  function insideLabels(rows, fmtFn, idSuffix){
+    return {
+      id:'il_'+idSuffix,
+      afterDatasetsDraw(chart){
+        const {ctx} = chart;
+        const meta = chart.getDatasetMeta(0);
+        const zeroX = chart.scales.x.getPixelForValue(0);
+        ctx.save();
+        ctx.font = '600 12px ' + sans;
+        ctx.textBaseline = 'middle';
+
+        meta.data.forEach((bar, i) => {
+          const v = rows[i][1];
+          const txt = fmtFn(rows[i]);
+          const txtW = ctx.measureText(txt).width;
+          const barLen = Math.abs(bar.x - zeroX);
+
+          if(barLen > txtW + 16){
+            ctx.textAlign = v >= 0 ? 'right' : 'left';
+            const x = v >= 0 ? bar.x - 8 : bar.x + 8;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillText(txt, x, bar.y);
+          } else {
+            ctx.textAlign = v >= 0 ? 'left' : 'right';
+            const x = v >= 0 ? bar.x + 7 : bar.x - 7;
+            ctx.fillStyle = v >= 0 ? '#0a5228' : '#8a1c12';
+            ctx.fillText(txt, x, bar.y);
+          }
+        });
+        ctx.restore();
+      }
+    };
+  }
+
+  function baseOpts(){
+    return {
+      indexAxis:'y', responsive:true, maintainAspectRatio:false,
+      layout:{ padding:{ right:16, left:0, top:4, bottom:4 } },
+      plugins:{ legend:{display:false}, tooltip:{enabled:false} },
+      scales:{
+        x:{
+          ticks:{
+            callback: v => (v>0?'+':'')+v+'%',
+            font:{size:11, family:sans, weight:'500'},
+            color:'#8a877d'
+          },
+          grid:{ color:'rgba(0,0,0,0.06)' },
+          border:{display:false}
+        },
+        y:{
+          ticks:{
+            font:{size:13, family:sans, weight:'500'},
+            color:'#111110'
+          },
+          grid:{display:false},
+          border:{display:false}
+        }
+      }
+    };
+  }
+
+  // ---- Índices ----
+  const idx=[['Dow Jones',0.2],['S&P 500',-2.64],['Nasdaq',-4.18]].sort((a,b)=>b[1]-a[1]);
+  new Chart(document.getElementById('idxChart'),{
+    type:'bar',
+    data:{
+      labels: idx.map(r=>r[0]),
+      datasets:[{ data:idx.map(r=>r[1]), backgroundColor:idx.map(r=>r[1]>=0?GREEN:RED), borderRadius:2, barPercentage:0.52 }]
+    },
+    options: baseOpts(),
+    plugins:[insideLabels(idx, r=>(r[1]>0?'+':'')+r[1].toFixed(2)+'%', 'idx')]
+  });
+
+  // ---- Petróleos ----
+  const oil=[['WTI',3.64,'US$90,54'],['Brent',0.91,'US$92,9']].sort((a,b)=>b[1]-a[1]);
+  const oilPlugin = {
+    id:'il_oil',
+    afterDatasetsDraw(chart){
+      const {ctx} = chart;
+      const meta = chart.getDatasetMeta(0);
+      const zeroX = chart.scales.x.getPixelForValue(0);
+      ctx.save();
+      ctx.font = '600 11.5px ' + sans;
+      ctx.textBaseline = 'middle';
+
+      meta.data.forEach((bar, i) => {
+        const v = oil[i][1];
+        const txt = (v>0?'+':'')+v.toFixed(2)+'%  ·  '+oil[i][2];
+        const txtW = ctx.measureText(txt).width;
+        const barLen = Math.abs(bar.x - zeroX);
+
+        if(barLen > txtW + 16){
+          ctx.textAlign = v >= 0 ? 'right' : 'left';
+          const x = v >= 0 ? bar.x - 8 : bar.x + 8;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(txt, x, bar.y);
+        } else {
+          ctx.textAlign = v >= 0 ? 'left' : 'right';
+          const x = v >= 0 ? bar.x + 7 : bar.x - 7;
+          ctx.fillStyle = v >= 0 ? '#0a5228' : '#8a1c12';
+          ctx.fillText(txt, x, bar.y);
+        }
+      });
+      ctx.restore();
+    }
+  };
+
+  new Chart(document.getElementById('oilChart'),{
+    type:'bar',
+    data:{
+      labels: oil.map(r=>r[0]),
+      datasets:[{ data:oil.map(r=>r[1]), backgroundColor:oil.map(r=>r[1]>=0?GREEN:RED), borderRadius:2, barPercentage:0.48 }]
+    },
+    options: baseOpts(),
+    plugins:[oilPlugin]
+  });
+
+  // ---- Sectores ----
+  const sec=[
+    ['Energía',1.70],['Real estate',0.93],['Salud',0.80],['Consumo defensivo',0.79],
+    ['Financiero',0.52],['Industriales',-0.48],['Utilities',-0.89],
+    ['Serv. comunicación',-3.88],['Tecnología',-4.62],['Consumo cíclico',-5.52],['Materiales básicos',-5.54]
+  ].sort((a,b)=>b[1]-a[1]);
+
+  new Chart(document.getElementById('secChart'),{
+    type:'bar',
+    data:{
+      labels: sec.map(r=>r[0]),
+      datasets:[{ data:sec.map(r=>r[1]), backgroundColor:sec.map(r=>r[1]>=0?GREEN:RED), borderRadius:2, barPercentage:0.68 }]
+    },
+    options: baseOpts(),
+    plugins:[insideLabels(sec, r=>(r[1]>0?'+':'')+r[1].toFixed(2)+'%', 'sec')]
+  });
+})();
+</script>
+</body>
+</html>
